@@ -1,11 +1,37 @@
-snippet react "Import react" b
-import React, { Component, PropTypes } from 'react'
+snippet funcc "Functional component" b
+import React from 'react'
+
+export default function $1 () {
+  return (
+
+  )
+}
+endsnippet
+
+snippet styledfuncc "Styled functional component" b
+import React from 'react'
+import styled, { css } from 'react-emotion'
+
+export default function $1 () {
+  return (
+
+  )
+}
+
+const Root = styled.div`
+
+`
 endsnippet
 
 snippet reactc "React component" b
-import React, { Component, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
-export default class $1 extends Component {
+export default class $1 extends PureComponent {
+  static propTypes = {
+
+  }
+
   render () {
     return (
 
@@ -13,3 +39,66 @@ export default class $1 extends Component {
   }
 }
 endsnippet
+
+snippet styledc "Styled react component" b
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import styled, { css } from 'react-emotion'
+
+export default class $1 extends PureComponent {
+  static propTypes = {
+
+  }
+
+  render () {
+    return (
+      <Root>
+
+      </Root>
+    )
+  }
+}
+
+const Root = styled.div`
+
+`
+endsnippet
+
+snippet styledc "Styled react component" b
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import styled, { css } from 'react-emotion'
+
+@connect(mapStateToProps, mapDispatchToProps)
+export default class $1 extends PureComponent {
+  static propTypes = {
+
+  }
+
+  render () {
+    return (
+      <Root>
+
+      </Root>
+    )
+  }
+}
+
+const Root = styled.div`
+
+`
+
+function mapStateToProps (state) {
+  return {
+
+  }
+}
+
+function mapDispatchToProps ({ dispatch }) {
+  return {
+
+  }
+}
+endsnippet
+
